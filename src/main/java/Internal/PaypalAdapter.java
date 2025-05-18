@@ -7,8 +7,9 @@ public class PaypalAdapter implements PaymentProvider{
 
     private PaypalAPI paypal = new PaypalAPI();
     @Override
-    public void createPayment(Long id, String name, String email, Double amount) {
+    public String createPayment(Long id, String name, String email, Double amount) {
         paypal.pay(id, name, email, amount);
+        return name;
     }
 
     @Override

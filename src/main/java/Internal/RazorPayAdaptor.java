@@ -8,8 +8,9 @@ public class RazorPayAdaptor implements PaymentProvider {
     private RazorPayAPI razorPayAPI = new RazorPayAPI();
 
     @Override
-    public void createPayment(Long id, String name, String email, Double amount) {
+    public String createPayment(Long id, String name, String email, Double amount) {
         razorPayAPI.makePayment(id, amount);
+        return name;
     }
 
     @Override
